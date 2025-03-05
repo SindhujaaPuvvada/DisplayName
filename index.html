@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NameDisplay</title>
+    <style type="text/css">
+        .header {
+            text-align: center;
+            font-family: 'Georgia';
+        }
+
+        body {
+            margin-top: 5%;
+            text-align: center;
+            background: #FFFDD0;
+        }
+
+        #_btnEnter {
+            background: teal;
+            color: white;
+            border: none;
+            font-family: 'verdana';
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 6.350mm;
+            color: Green;
+            padding: 20px;
+            font-family: 'Arial';
+            font-style: italic;
+        }
+    </style>
+    <script>function display() {
+            var word = 'SINDHUJAA';
+            var len = word.length;
+            var ele = document.getElementById('_data');
+            ele.innerHTML = word.substring(0, 1);
+            let i = 2;
+            var intervalID = setInterval(function () {
+                ele.innerHTML = word.substring(0, i)
+                i++
+                if (i == len + 1) {
+                    clearInterval(intervalID);
+                }
+            }
+                , 1000);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Display Name</h1>
+    </div>
+    <div class="button">
+        <h2> <input id="_btnEnter" type="button" value="ENTER" onclick="display()"></h2>
+        <p id="_data"></p>
+    </div>
+</body>
+
+</html>
